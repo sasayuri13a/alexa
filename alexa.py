@@ -30,6 +30,10 @@ def speak(text):
 # Inicializando o reconhecimento de fala
 r = sr.Recognizer()
 
+#saudaçao inicial 
+speak("Ola eu sou a Alexa, como posso ajudar?")
+print("Ola eu sou a Alexa, como posso ajudar?")
+
 # Abertura do microfone para escutar a fala
 with sr.Microphone() as s:
     print("Ajustando para o som ambiente...")
@@ -45,7 +49,7 @@ with sr.Microphone() as s:
 
             # Obtenção da resposta do chatbot
             response = bot.get_response(speech)
-            print("Bot:", response)
+            print("Alexa:", response)
             speak(str(response))
         except sr.UnknownValueError:
             speak("Desculpe, não entendi o que você disse.")
